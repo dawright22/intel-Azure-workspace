@@ -77,6 +77,18 @@ resource "tfe_variable" "password" {
   workspace_id = tfe_workspace.customer-workspace-1.id
   description  = "password"
 }
+resource "tfe_policy_set" "sentinel_policy_set" {
+  name          = "sentinal-policy-set"
+  description   = "A Policy Set"
+  organization  = tfe_organization.customer-org.name
+  workspace_ids = tfe_workspace.customer-workspace-1.id
+  vcs_repo {
+    identifier         = "dawright22/Intel-sentinel-policy"
+    branch             = "main"
+    ingress_submodules = false
+    oauth_token_id     = var.oauth_token_id
+  }
+}
 
 output "user_instructions" {
   value = <<README
