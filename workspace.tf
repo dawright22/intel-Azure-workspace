@@ -19,6 +19,11 @@ resource "tfe_organization" "customer-org" {
 resource "tfe_workspace" "customer-workspace-1" {
   name         = "${random_pet.name.id}-workspace-1"
   organization = tfe_organization.customer-org.name
+   vcs_repo {
+    identifier     = "dawright22/Intel-optimised-mssql-vm-caf"
+    branch         = "master"
+    oauth_token_id = var.oauth_token_id
+  }
 }
 
 resource "tfe_variable" "ARM_SUBSCRIPTION_ID" {
