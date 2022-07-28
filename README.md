@@ -33,13 +33,13 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_ARM_CLIENT_ID"></a> [ARM\_CLIENT\_ID](#input\_ARM\_CLIENT\_ID) | ARM\_CLIENT\_ID | `string` | `"62c01a11-3b94-422d-ae01-56bbdcba0575"` | no |
-| <a name="input_ARM_CLIENT_SECRET"></a> [ARM\_CLIENT\_SECRET](#input\_ARM\_CLIENT\_SECRET) | ARM\_CLIENT\_SECRET | `string` | `"?fB7w0BJRDmRsZCbayIIzB0VFC-@qd0:"` | no |
-| <a name="input_ARM_SUBSCRIPTION_ID"></a> [ARM\_SUBSCRIPTION\_ID](#input\_ARM\_SUBSCRIPTION\_ID) | ARM\_SUBSCRIPTION\_ID | `string` | `"14692f20-9428-451b-8298-102ed4e39c2a"` | no |
-| <a name="input_ARM_TENANT_ID"></a> [ARM\_TENANT\_ID](#input\_ARM\_TENANT\_ID) | ARM\_TENANT\_ID | `string` | `"0e3e2e88-8caf-41ca-b4da-e3b33b6c52ec"` | no |
-| <a name="input_appId"></a> [appId](#input\_appId) | appId | `string` | `"e1c86674-638b-433c-a97e-381fe09db79e"` | no |
-| <a name="input_oauth_token"></a> [oauth\_token](#input\_oauth\_token) | Oauth token | `string` | `"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"` | no |
-| <a name="input_password"></a> [password](#input\_password) | APPID pasword | `string` | `"AUT8Q~gzfjI1jC3SYQBZwUr6zP3wRcnjY6Dq4bMF"` | no |
+| <a name="input_ARM_CLIENT_ID"></a> [ARM\_CLIENT\_ID](#input\_ARM\_CLIENT\_ID) | ARM\_CLIENT\_ID | `string` | `"xxxxx"` | no |
+| <a name="input_ARM_CLIENT_SECRET"></a> [ARM\_CLIENT\_SECRET](#input\_ARM\_CLIENT\_SECRET) | ARM\_CLIENT\_SECRET | `string` | `"xxx"` | no |
+| <a name="input_ARM_SUBSCRIPTION_ID"></a> [ARM\_SUBSCRIPTION\_ID](#input\_ARM\_SUBSCRIPTION\_ID) | ARM\_SUBSCRIPTION\_ID | `string` | `"xxx"` | no |
+| <a name="input_ARM_TENANT_ID"></a> [ARM\_TENANT\_ID](#input\_ARM\_TENANT\_ID) | ARM\_TENANT\_ID | `string` | `"xxx"` | no |
+| <a name="input_appId"></a> [appId](#input\_appId) | appId | `string` | `"xxx"` | no |
+| <a name="input_oauth_token"></a> [oauth\_token](#input\_oauth\_token) | Oauth token | `string` | `"xxx"` | no |
+| <a name="input_password"></a> [password](#input\_password) | APPID pasword | `string` | `"xxx"` | no |
 
 ## Outputs
 
