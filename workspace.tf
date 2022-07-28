@@ -19,7 +19,7 @@ resource "tfe_organization" "customer-org" {
 resource "tfe_workspace" "customer-workspace-1" {
   name         = "${random_pet.name.id}-workspace-1"
   organization = tfe_organization.customer-org.name
-   vcs_repo {
+  vcs_repo {
     identifier     = "dawright22/Intel-optimised-mssql-vm-caf"
     branch         = "master"
     oauth_token_id = var.oauth_token_id
@@ -28,7 +28,7 @@ resource "tfe_workspace" "customer-workspace-1" {
 
 resource "tfe_variable" "ARM_SUBSCRIPTION_ID" {
   key          = "ARM_SUBSCRIPTION_ID"
-  value        = ""
+  value        = var.ARM_SUBSCRIPTION_ID
   category     = "env"
   workspace_id = tfe_workspace.customer-workspace-1.id
   description  = "ARM_SUBSCRIPTION_ID"
@@ -36,7 +36,7 @@ resource "tfe_variable" "ARM_SUBSCRIPTION_ID" {
 
 resource "tfe_variable" "ARM_CLIENT_ID" {
   key          = "ARM_CLIENT_ID"
-  value        = ""
+  value        = var.ARM_CLIENT_ID
   category     = "env"
   workspace_id = tfe_workspace.customer-workspace-1.id
   description  = "ARM_CLIENT_ID"
@@ -44,7 +44,7 @@ resource "tfe_variable" "ARM_CLIENT_ID" {
 
 resource "tfe_variable" "ARM_CLIENT_SECRET" {
   key          = "ARM_CLIENT_SECRET"
-  value        = ""
+  value        = var.ARM_CLIENT_SECRET
   sensitive    = true
   category     = "env"
   workspace_id = tfe_workspace.customer-workspace-1.id
@@ -53,16 +53,16 @@ resource "tfe_variable" "ARM_CLIENT_SECRET" {
 
 resource "tfe_variable" "ARM_TENANT_ID" {
   key          = "ARM_TENANT_ID"
-  value        = ""
+  value        = var.ARM_TENANT_ID
   category     = "env"
   workspace_id = tfe_workspace.customer-workspace-1.id
   description  = "ARM_TENANT_ID"
- }
+}
 
 
 resource "tfe_variable" "appId" {
   key          = "appId"
-  value        = ""
+  value        = var.appId
   sensitive    = true
   category     = "terraform"
   workspace_id = tfe_workspace.customer-workspace-1.id
@@ -71,7 +71,7 @@ resource "tfe_variable" "appId" {
 
 resource "tfe_variable" "password" {
   key          = "password"
-  value        = ""
+  value        = var.password
   sensitive    = true
   category     = "terraform"
   workspace_id = tfe_workspace.customer-workspace-1.id
@@ -97,4 +97,4 @@ output "user_instructions" {
  your workspace for creating your cluster is      = ${tfe_workspace.customer-workspace-1.name}
 
 README
-}                 
+}
