@@ -16,13 +16,22 @@ resource "tfe_organization" "customer-org" {
   email = "admin@your-company.com"
 }
 
+resource "tfe_oauth_client" "token" {
+  name             = "${random_pet.name.id}-github-oauth-client"
+  organization     = tfe_organization.customer-org.name
+  api_url          = "https://api.github.com"
+  http_url         = "https://github.com"
+  oauth_token      = var.oauth_token
+  service_provider = "github"
+}
+
 resource "tfe_workspace" "customer-workspace-1" {
   name         = "${random_pet.name.id}-workspace-1"
   organization = tfe_organization.customer-org.name
   vcs_repo {
     identifier     = "dawright22/Intel-optimised-mssql-vm-caf"
-    branch         = "master"
-    oauth_token_id = var.oauth_token_id
+    branch         = "main"
+    oauth_token_id = tfe_oauth_client.token.oauth_token_id
   }
 }
 
@@ -81,12 +90,12 @@ resource "tfe_policy_set" "sentinel_policy_set" {
   name          = "sentinal-policy-set"
   description   = "A Policy Set"
   organization  = tfe_organization.customer-org.name
-  workspace_ids = tfe_workspace.customer-workspace-1.id
+  workspace_ids = [tfe_workspace.customer-workspace-1.id]
   vcs_repo {
     identifier         = "dawright22/Intel-sentinel-policy"
     branch             = "main"
     ingress_submodules = false
-    oauth_token_id     = var.oauth_token_id
+    oauth_token_id     = tfe_oauth_client.token.oauth_token_id
   }
 }
 

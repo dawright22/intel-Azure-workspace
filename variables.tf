@@ -32,7 +32,7 @@ variable "password" {
   sensitive   = true
 }
 
-variable "oauth_token_id" {
+variable "oauth_token" {
   description = "Oauth token"
   default     = ""
   sensitive   = true
